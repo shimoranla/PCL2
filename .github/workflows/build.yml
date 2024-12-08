@@ -39,8 +39,9 @@ jobs:
         curl -o ".\master.zip" "https://codeload.github.com/LTCatt/PCL2Help/zip/refs/heads/master"
         del "Plain Craft Launcher 2\Resources\Help.zip"
         tar xf master.zip
-        del PCL2Help-master\*
-        tar cf PCL2Help-master\* -p ".\Plain Craft Launcher 2\Resources\Help.zip"  
+        dir
+        # del PCL2Help-master\*
+        # tar cf PCL2Help-master\* -p ".\Plain Craft Launcher 2\Resources\Help.zip"  
     - name: Build
       run: msbuild "Plain Craft Launcher 2\Plain Craft Launcher 2.vbproj" -p:Configuration=${{ matrix.configuration }}
     - name: Upload a Build Artifact
