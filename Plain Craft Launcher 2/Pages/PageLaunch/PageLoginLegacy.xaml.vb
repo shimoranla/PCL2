@@ -58,7 +58,7 @@ Public Class PageLoginLegacy
     End Sub
     Private Sub ComboLegacy_TextChanged(sender As Object, e As TextChangedEventArgs) Handles ComboName.TextChanged
         If Setup.Get("LaunchSkinType") = 0 Then PageLaunchLeft.SkinLegacy.Start(IsForceRestart:=True)
-        HintChinese.Visibility = If(RegexCheck(ComboName.Text, "^[0-9A-Za-z_]*$"), Visibility.Collapsed, Visibility.Visible)
+        HintChinese.Visibility = If(RegexCheck(ComboName.Text, "^[0-9A-Za-z_]*$") Or Len(ComboName.Text) > 16, Visibility.Collapsed, Visibility.Visible)
     End Sub
     Private Sub Skin_Click() Handles Skin.Click
         If (Setup.Get("UiHiddenPageSetup") OrElse Setup.Get("UiHiddenSetupLaunch")) AndAlso Not PageSetupUI.HiddenForceShow Then
