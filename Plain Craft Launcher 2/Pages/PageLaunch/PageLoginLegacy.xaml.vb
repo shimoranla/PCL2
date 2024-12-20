@@ -57,8 +57,7 @@ Public Class PageLoginLegacy
         End If
     End Sub
     Private Sub ComboLegacy_TextChanged(sender As Object, e As TextChangedEventArgs) Handles ComboName.TextChanged
-        If Setup.Get("LaunchSkinType") = 0 Then PageLaunchLeft.SkinLegacy.Start(IsForceRestart:=True)
-        HintChinese.Visibility = 
+        If Setup.Get("LaunchSkinType") = 0 Then PageLaunchLeft.SkinLegacy.Start(IsForceRestart:=True) 
         If RegexCheck(ComboName.Text, "^[0-9A-Za-z_]*$") Or Len(ComboName.Text) > 16 Then
             HintChinese.Visibility = Visibility.Visible
         Else 
